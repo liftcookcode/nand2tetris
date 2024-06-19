@@ -1,4 +1,3 @@
-
 class Assembler(object):
     def __init__(self, parser, symbol_table, code):
         self.parser = parser
