@@ -1,0 +1,17 @@
+
+
+/** 
+Main class of the jump game
+*/
+
+class Main {
+    /** Initializes a jump game and starts running it */
+
+    function void main() {
+        var Game g;
+        let g = Game.new();
+        do g.run();
+        do g.dispose();
+        return;
+    }
+}
