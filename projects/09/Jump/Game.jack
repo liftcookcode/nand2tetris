@@ -1,0 +1,49 @@
+class Game {
+    field Character character;
+
+    constructor Game new() {
+        let character = Character.new();
+        return this;
+    }
+
+    method void run() {
+        var boolean done;
+        var int key;    // will be 0 default
+
+        let done = false;
+        while (~done) {
+            // waits for a key to be pressed
+            while (key = 0) {
+                let key = Keyboard.keyPressed();
+                do update();
+            }
+            if (key = 81) {let done = true; }   // q key
+            if (key = 32) {do character.jump(); }   // space
+
+            // waits for the key to be released
+            while (~(key = 0)) {
+                let key = Keyboard.keyPressed();
+                do update();
+            }
+        }
+        return;
+    }
+    
+    method void update() {
+        do character.update();
+        do draw();
+        do Sys.wait(33);
+        return;
+    }
+    
+    method void draw() {
+        do character.draw();
+        return;
+    }
+
+    method void dispose() {
+        do character.dispose();
+        do Memory.deAlloc(this);
+        return;
+    }
+}
