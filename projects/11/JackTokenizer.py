@@ -2,6 +2,7 @@ import re
 import sys
 from collections import namedtuple
 
+# test 
 Token = namedtuple('Token',('type', 'value'))
 
 class JackTokenizer:
